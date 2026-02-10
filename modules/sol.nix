@@ -1,14 +1,21 @@
 {
-  flake.modules.host.sol.hardware = {
-    config,
+  inputs,
+  self,
+  ...
+}: {
+  flake.nixosConfigurations.sol = inputs.nixpkgs.lib.nixosSystem {
+    modules = [
+      self.nixosModules.solModule
+      self.nixosModules.browsers
+    ];
+  };
+
+  flake.nixosModules.solModule = {
+    pkgs,
     lib,
-    modulesPath,
+    config,
     ...
   }: {
-    imports = [
-      (modulesPath + "/installer/scan/not-detected.nix")
-    ];
-
     boot = {
       initrd = {
         availableKernelModules = ["xhci_pci" "ahci" "nvme" "uas" "usb_storage" "usbhid" "sd_mod" "sr_mod"];
