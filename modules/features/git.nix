@@ -4,7 +4,7 @@ _: {
     pkgs,
     ...
   }: {
-    environment.systemPackages = [pkgs.git];
+    environment.systemPackages = [pkgs.git pkgs.jujutsu];
     my.home = {
       programs.git = {
         enable = true;
