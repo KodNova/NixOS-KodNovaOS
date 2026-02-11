@@ -30,6 +30,11 @@ _: {
           plugins = ["git"];
         };
       };
+
+      fzf = {
+        enable = true;
+        enableZshIntegration = true;
+      };
     };
   };
   flake.nixosModules.solModule = _: {
