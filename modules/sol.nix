@@ -1,10 +1,12 @@
-{inputs, ...}: {
+{...}: {
   flake.nixosModules.solModule = {
     pkgs,
     lib,
     config,
     ...
   }: {
+    my.username = "kodnova";
+    my.email = "Dev@KodNova.dev";
     networking.hostName = "sol";
 
     boot = {
@@ -25,9 +27,9 @@
 
     # --- USER CONFIG ---
     users.mutableUsers = false;
-    users.users.kodnova = {
+    users.users.${config.my.username} = {
       isNormalUser = true;
-      description = "kodnova";
+      description = config.my.username;
       # WARN: placeholder password
       hashedPassword = "$y$j9T$aK/y4/XGb2iKqAEyjyXI70$yLczsgiS6cWz/U6JMlPHa2OVyYTnY52hmOGBx8s42cB";
       extraGroups = ["networkmanager" "wheel" "scanner" "lp" "libvirtd" "video" "render"];
@@ -53,7 +55,7 @@
         "/etc/machine-id"
       ];
 
-      users.kodnova = {
+      users.${config.my.username} = {
         directories = [
           "Downloads"
           "Music"
