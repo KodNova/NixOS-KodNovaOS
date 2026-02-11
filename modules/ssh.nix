@@ -1,5 +1,5 @@
-{inputs, ...}: {
-  flake.nixosModules.workstation = {pkgs, ...}: {
+{...}: {
+  flake.nixosModules.workstation = {...}: {
     services = {
       # WARN:ssh enabled
       openssh = {
@@ -13,7 +13,7 @@
     };
   };
 
-  flake.nixosModules.server = {pkgs, ...}: {
+  flake.nixosModules.server = {...}: {
     services = {
       openssh = {
         enable = true;
