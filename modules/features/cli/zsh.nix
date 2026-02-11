@@ -13,9 +13,9 @@ _: {
             syntaxHighlighting.enable = true;
 
             shellAliases = {
-              ls = "eza --icons --group-directories-first";
-              ll = "eza -l --icons --git --group-directories-first";
-              la = "eza -la --icons --git --group-directories-first";
+              # ls = "eza --icons --group-directories-first";
+              # ll = "eza -l --icons --git --group-directories-first";
+              # la = "eza -la --icons --git --group-directories-first";
               cat = "bat";
               du = "dust";
               ps = "procs";

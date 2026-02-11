@@ -1,6 +1,13 @@
 _: {
   flake.nixosModules.workstation = {pkgs, ...}: {
-    environment.systemPackages = [pkgs.libreoffice-fresh pkgs.gimp pkgs.localsend pkgs.remmina];
+    environment.systemPackages = [
+      pkgs.libreoffice-fresh
+      pkgs.gimp
+      pkgs.localsend
+      pkgs.remmina
+      pkgs.papirus-icon-theme
+      pkgs.bleachbit
+    ];
 
     my.home = {
       programs.obsidian = {

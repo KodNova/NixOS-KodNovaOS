@@ -1,5 +1,7 @@
 _: {
   flake.nixosModules.base = {pkgs, ...}: {
+    environment.systemPackages = [pkgs.waypipe pkgs.dust pkgs.procs];
+
     my.home = {
       programs = {
         tealdeer = {
@@ -27,6 +29,28 @@ _: {
           };
         };
 
+        eza = {
+          enable = true;
+          colors = "auto";
+          enableZshIntegration = true;
+          git = true;
+          icons = "auto";
+          extraOptions = ["--group-directories-first"];
+        };
+
+        xdg.configFile."eza/theme.yml".source =
+          (pkgs.fetchFromGitHub {
+            owner = "catppuccin";
+            repo = "eza";
+            rev = "6de4d1cf4de03c3bacba07e3d43b4e229921927b";
+            sha256 = "sha256-GclTc7mBJ2fMSMOFXnBRhezEBbAP3pOvBKjqF5KSSXA=";
+          })
+          + "/themes/catppuccin_mocha.yml";
+
+        ripgrep.enable = true;
+
+        fd.enable = true;
+
         superfile = {
           enable = true;
         };
@@ -40,6 +64,6 @@ _: {
     my.home = {
       programs.btop.package = pkgs.btop-rocm;
     };
-    environment.systemPackages = [pkgs.bleachbit pkgs.devbox];
+    environment.systemPackages = [pkgs.devbox];
   };
 }
