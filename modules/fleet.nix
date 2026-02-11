@@ -10,6 +10,7 @@
       self.nixosModules.home-manager
       self.nixosModules.workstation
       self.nixosModules.impermanence
+      self.nixosModules.gaming
     ];
   };
 }
