@@ -5,6 +5,9 @@ _: {
     my.home = {
       programs.obsidian = {
         enable = true;
+        vaults.obsidian_main = {
+          target = "Documents/obsidian_vaults/obsidian_main";
+        };
       };
     };
   };
