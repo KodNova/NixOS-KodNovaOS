@@ -1,6 +1,16 @@
 _: {
   flake.nixosModules.base = {pkgs, ...}: {
-    environment.systemPackages = [pkgs.waypipe pkgs.dust pkgs.procs];
+    environment.systemPackages = [
+      pkgs.waypipe
+      pkgs.dust
+      pkgs.procs
+      pkgs.wget
+      pkgs.unzip
+      pkgs.fastfetch
+      pkgs.tokei
+      pkgs.bottom
+      pkgs.sshfs
+    ];
 
     my.home = {
       programs = {
@@ -64,6 +74,6 @@ _: {
     my.home = {
       programs.btop.package = pkgs.btop-rocm;
     };
-    environment.systemPackages = [pkgs.devbox];
+    environment.systemPackages = [pkgs.devbox pkgs.yt-dlp pkgs.ffmpeg];
   };
 }

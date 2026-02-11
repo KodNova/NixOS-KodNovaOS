@@ -4,7 +4,7 @@ _: {
     pkgs,
     ...
   }: {
-    environment.systemPackages = [pkgs.git pkgs.jujutsu];
+    environment.systemPackages = [pkgs.git pkgs.lazygit pkgs.jujutsu];
     my.home = {
       programs.git = {
         enable = true;
