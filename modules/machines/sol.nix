@@ -67,6 +67,7 @@ _: {
         "/etc/secureboot"
         "/var/db/sudo"
         "/srv"
+        "/var/lib/tailscale"
       ];
       files = [
         "/etc/machine-id"
