@@ -10,5 +10,6 @@ _: {
         jack.enable = true;
       };
     };
+    security.rtkit.enable = true;
   };
 }

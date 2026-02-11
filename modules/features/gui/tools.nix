@@ -7,7 +7,12 @@ _: {
       pkgs.remmina
       pkgs.papirus-icon-theme
       pkgs.bleachbit
+      pkgs.Piper
     ];
+
+    services = {
+      ratbagd.enable = true; # Backend for Piper. Mouse.
+    };
 
     my.home = {
       programs.obsidian = {
