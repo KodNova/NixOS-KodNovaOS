@@ -1,5 +1,7 @@
 _: {
   flake.nixosModules.base = _: {
+    programs.zsh.enable = true;
+
     my.home = {
       programs.zsh = {
         enable = true;
