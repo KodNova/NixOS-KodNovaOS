@@ -1,5 +1,5 @@
 {inputs, ...}: {
-  flake.nixosModules.broswers = {...}: {
+  flake.nixosModules.base = {...}: {
     programs.firefox.enable = true;
   };
 }
