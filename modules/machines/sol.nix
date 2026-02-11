@@ -1,10 +1,15 @@
-{...}: {
+_: {
   flake.nixosModules.solModule = {
     pkgs,
     lib,
     config,
+    modulesPath,
     ...
   }: {
+    imports = [
+      (modulesPath + "/installer/scan/not-detected.nix")
+    ];
+
     my.username = "kodnova";
     my.email = "Dev@KodNova.dev";
     networking.hostName = "sol";
