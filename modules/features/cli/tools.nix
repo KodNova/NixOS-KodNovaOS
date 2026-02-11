@@ -1,6 +1,13 @@
 _: {
   flake.nixosModules.base = {pkgs, ...}: {
     my.home = {
+      programs.tealdeer = {
+        enable = true;
+        settings = {
+          updates.auto_update = true;
+        };
+      };
+
       programs.bat = {
         enable = true;
         config = {
