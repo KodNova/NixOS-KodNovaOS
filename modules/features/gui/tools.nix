@@ -14,6 +14,13 @@ _: {
       ratbagd.enable = true; # Backend for Piper. Mouse.
     };
 
+    programs = {
+      appimage = {
+        enable = true;
+        binfmt = true;
+      };
+    };
+
     my.home = {
       programs.obsidian = {
         enable = true;
