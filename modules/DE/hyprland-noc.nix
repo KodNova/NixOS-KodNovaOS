@@ -2,7 +2,7 @@
   flake.nixosModules.hyprland-noc = {pkgs, ...}: {
     programs.hyprland = {
       enable = true;
-      withUWSM = true;
+      withUWSM = false;
       xwayland.enable = true;
     };
 
@@ -71,12 +71,14 @@
       };
 
       wayland.windowManager.hyprland = {
+        enable = true;
         systemd.enable = false;
         settings = {
           "$mainMod" = "SUPER";
           "$ipc" = "noctalia-shell ipc call";
 
           exec-once = [
+            "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
             "noctalia-shell"
             "wl-paste -t text --watch clipman store --no-persist"
           ];

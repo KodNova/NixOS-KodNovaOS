@@ -2,7 +2,7 @@ _: {
   flake.nixosModules.hyprland = {pkgs, ...}: {
     programs.hyprland = {
       enable = true;
-      withUWSM = true;
+      withUWSM = false;
       xwayland.enable = true;
     };
 
@@ -31,6 +31,7 @@ _: {
 
     my.home = {
       wayland.windowManager.hyprland = {
+        enable = true;
         systemd.enable = false;
         settings = {
           "$mainMod" = "SUPER";
@@ -44,7 +45,7 @@ _: {
           exec-once = [
             "mako"
             "swayidle -w timeout 600 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on'"
-            # "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+            "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
             "wl-paste -t text --watch clipman store --no-persist"
           ];
 
