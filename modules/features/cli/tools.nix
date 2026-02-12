@@ -48,15 +48,6 @@ _: {
           extraOptions = ["--group-directories-first"];
         };
 
-        xdg.configFile."eza/theme.yml".source =
-          (pkgs.fetchFromGitHub {
-            owner = "catppuccin";
-            repo = "eza";
-            rev = "6de4d1cf4de03c3bacba07e3d43b4e229921927b";
-            sha256 = "sha256-GclTc7mBJ2fMSMOFXnBRhezEBbAP3pOvBKjqF5KSSXA=";
-          })
-          + "/themes/catppuccin_mocha.yml";
-
         ripgrep.enable = true;
 
         fd.enable = true;
@@ -67,6 +58,15 @@ _: {
 
         btop.enable = true;
       };
+
+      xdg.configFile."eza/theme.yml".source =
+        (pkgs.fetchFromGitHub {
+          owner = "catppuccin";
+          repo = "eza";
+          rev = "6de4d1cf4de03c3bacba07e3d43b4e229921927b";
+          sha256 = "sha256-GclTc7mBJ2fMSMOFXnBRhezEBbAP3pOvBKjqF5KSSXA=";
+        })
+        + "/themes/catppuccin_mocha.yml";
     };
   };
 
