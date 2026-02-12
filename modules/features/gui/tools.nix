@@ -7,7 +7,7 @@ _: {
       pkgs.remmina
       pkgs.papirus-icon-theme
       pkgs.bleachbit
-      pkgs.Piper
+      pkgs.piper
     ];
 
     services = {

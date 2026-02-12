@@ -8,8 +8,10 @@ _: {
     my.home = {
       programs.git = {
         enable = true;
-        userName = config.my.username;
-        userEmail = config.my.email;
+        settings = {
+          user.name = config.my.username;
+          user.email = config.my.email;
+        };
       };
     };
   };
