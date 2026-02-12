@@ -77,6 +77,8 @@ _: {
         "/var/db/sudo"
         "/srv"
         "/var/lib/tailscale"
+        "/var/lib/flatpak"
+        "/etc/ssh"
       ];
       files = [
         "/etc/machine-id"
@@ -89,11 +91,47 @@ _: {
           "Pictures"
           "Documents"
           "Videos"
-          ".local/share/Steam"
           ".steam"
-          ".config/heroic"
-          ".local/share/flatpak"
+          ".zen"
+          ".ts3client"
+          ".mozilla"
+          "zpm-mnt"
+          "scripts"
+
+          #.var
           ".var/app"
+
+          #.local
+          ".local/share/Steam"
+          ".local/share/flatpak"
+          ".local/state/nix"
+
+          #.config
+          ".config/heroic"
+          ".config/discord"
+          ".config/lazygit"
+          ".config/zed"
+          ".config/zellij"
+          ".config/plexamp"
+          ".config/vlc"
+          ".config/Signal"
+          ".config/TeamSpeak"
+          ".config/syncthing"
+
+          #.cache
+          ".cache/tealdeer"
+          ".cache/fastfetch"
+          ".cache/starship"
+          ".cache/TeamSpeak"
+          ".cache/zen"
+          ".cache/zellij"
+          ".cache/zed"
+          ".cache/flatpak"
+          ".cache/nix"
+          ".cache/dolphin"
+          ".cache/appimage-run"
+          ".cache/pnpm"
+
           {
             directory = ".gnupg";
             mode = "0700";

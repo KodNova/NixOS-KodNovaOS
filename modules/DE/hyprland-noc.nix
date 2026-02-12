@@ -242,6 +242,7 @@
 
           bindl = [
             ",XF86AudioMute, exec, $ipc volume muteOutput"
+            "$mainMod, Super_L, exec, pkill rofi || rofi -show drun"
           ];
 
           bindm = [
