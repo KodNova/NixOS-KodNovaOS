@@ -63,8 +63,8 @@ _: {
         (pkgs.fetchFromGitHub {
           owner = "catppuccin";
           repo = "eza";
-          rev = "6de4d1cf4de03c3bacba07e3d43b4e229921927b";
-          sha256 = "sha256-GclTc7mBJ2fMSMOFXnBRhezEBbAP3pOvBKjqF5KSSXA=";
+          rev = "70f805f6cc27fa5b91750b75afb4296a0ec7fec9";
+          sha256 = "sha256-Q+C07IReQQBO5xYuFiFbS1wjmO4gdt/wIJWHNwIizSc=";
         })
         + "/themes/catppuccin_mocha.yml";
     };
