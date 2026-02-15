@@ -119,6 +119,7 @@ _: {
           ".config/syncthing"
 
           #.cache
+          ".config/noctalia"
           ".cache/tealdeer"
           ".cache/fastfetch"
           ".cache/starship"
