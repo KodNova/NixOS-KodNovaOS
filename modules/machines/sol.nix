@@ -25,14 +25,6 @@ _: {
     networking = {
       hostName = "sol";
       networkmanager.enable = true;
-      firewall = {
-        enable = true;
-        # NOTE: 5173 is vite web dev, 3000 is for nextjs
-        allowedTCPPorts = [
-          5173
-          3000
-        ];
-      };
     };
 
     boot = {
