@@ -20,7 +20,7 @@
         ports = [2222];
         settings = {
           PermitRootLogin = "without-password";
-          PasswordAuthentication = false;
+          PasswordAuthentication = true;
         };
       };
     };
