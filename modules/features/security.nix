@@ -24,6 +24,7 @@ _: {
     lunaModule = {
       networking.firewall = {
         enable = true;
+        checkReversePath = "loose"; # NOTE: for using tailscale ext servers
         # NOTE: 5173 is vite web dev, 3000 is for nextjs
         allowedTCPPorts = [
           5173
