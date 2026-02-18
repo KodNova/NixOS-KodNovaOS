@@ -8,11 +8,21 @@ _: {
       username = "kodnova";
       email = "Dev@KodNova.dev";
       home = {
-        wayland.windowManager.hyprland.settings.monitor = [
-          "HDMI-A-1,1920x1080@60.00,0x0,1"
-          "DP-2,2560x1440@143.856003,1920x0,1"
-          "DVI-D-1,1920x1080@60.00,4480x0,1"
-        ];
+        wayland.windowManager.hyprland.settings = {
+          monitor = [
+            ", preferred, auto, 1"
+          ];
+
+          bindl = [
+            ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+          ];
+
+          bindel = [
+            # Brightness control
+            ", XF86MonBrightnessUp, exec, brightnessctl set 5%+"
+            ", XF86MonBrightnessDown, exec, brightnessctl set 5%-"
+          ];
+        };
       };
     };
     networking = {
@@ -73,7 +83,6 @@ _: {
           "Pictures"
           "Documents"
           "Videos"
-          ".steam"
           ".zen"
           ".ts3client"
           ".mozilla"
