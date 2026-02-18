@@ -970,6 +970,10 @@
             # main hotkeys
             "$mainMod, Return, exec, alacritty"
 
+            # Scripts
+            "CTRLSHIFT, backslash, exec, bash ~/scripts/dev_mode.sh"
+            "CTRL SHIFT ALT, backslash, exec, bash ~/scripts/plex_mode.sh"
+
             # app launches
             "CTRLSHIFT, F, exec, alacritty -e superfile"
             "CTRLSHIFT, S, exec, steam"
