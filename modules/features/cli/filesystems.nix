@@ -5,5 +5,7 @@ _: {
 
   flake.nixosModules.workstation = {pkgs, ...}: {
     environment.systemPackages = [pkgs.exfatprogs pkgs.ntfs3g];
+    services.udisks2.enable = true;
+    services.gvfs.enable = true;
   };
 }

@@ -203,5 +203,54 @@ _: {
 
     nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
     hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+
+    # hyprland config for sol
+    my.home.noctalia-shell.settings = {
+      desktopWidgets = {
+        enabled = true;
+        gridSnap = false;
+        monitorWidgets = [
+          {
+            name = "HDMI-A-1";
+            widgets = [];
+          }
+          {
+            name = "DVI-D-1";
+            widgets = [];
+          }
+          {
+            name = "DP-2";
+            widgets = [
+              {
+                hideMode = "hidden";
+                id = "MediaPlayer";
+                roundedCorners = true;
+                scale = 1.0848528137423856;
+                showAlbumArt = true;
+                showBackground = true;
+                showButtons = true;
+                showVisualizer = true;
+                visualizerType = "linear";
+                x = 0;
+                y = 40;
+              }
+              {
+                clockColor = "secondary";
+                clockStyle = "minimal";
+                customFont = "Hack Nerd Font";
+                format = "HH:mm\\nd MMMM yyyy";
+                id = "Clock";
+                roundedCorners = true;
+                scale = 1.5232590180780452;
+                showBackground = true;
+                useCustomFont = true;
+                x = 2280;
+                y = 40;
+              }
+            ];
+          }
+        ];
+      };
+    };
   };
 }

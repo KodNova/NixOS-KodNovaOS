@@ -408,7 +408,7 @@
               screenOverrides = [];
             };
             general = {
-              avatarImage = "/home/kodnova/Documents/Desktop-to-Phone/pic/screenshot-new-lofi-me.png";
+              avatarImage = "/repos/NixOS-KodNovaOS/profile.png";
               dimmerOpacity = 0.2;
               showScreenCorners = false;
               forceBlackScreenCorners = false;
@@ -430,7 +430,7 @@
               shadowOffsetY = 0;
               language = "";
               allowPanelsOnScreenWithoutBar = true;
-              showChangelogOnStartup = true;
+              showChangelogOnStartup = false;
               telemetryEnabled = false;
               enableLockScreenCountdown = true;
               lockScreenCountdownDuration = 5000;
@@ -812,58 +812,13 @@
             plugins = {
               autoUpdate = false;
             };
-            desktopWidgets = {
-              enabled = true;
-              gridSnap = false;
-              monitorWidgets = [
-                {
-                  name = "HDMI-A-1";
-                  widgets = [];
-                }
-                {
-                  name = "DVI-D-1";
-                  widgets = [];
-                }
-                {
-                  name = "DP-2";
-                  widgets = [
-                    {
-                      hideMode = "hidden";
-                      id = "MediaPlayer";
-                      roundedCorners = true;
-                      scale = 1.0848528137423856;
-                      showAlbumArt = true;
-                      showBackground = true;
-                      showButtons = true;
-                      showVisualizer = true;
-                      visualizerType = "linear";
-                      x = 0;
-                      y = 40;
-                    }
-                    {
-                      clockColor = "secondary";
-                      clockStyle = "minimal";
-                      customFont = "Hack Nerd Font";
-                      format = "HH:mm\\nd MMMM yyyy";
-                      id = "Clock";
-                      roundedCorners = true;
-                      scale = 1.5232590180780452;
-                      showBackground = true;
-                      useCustomFont = true;
-                      x = 2280;
-                      y = 40;
-                    }
-                  ];
-                }
-              ];
-            };
           };
         };
       };
 
       wayland.windowManager.hyprland = {
         enable = true;
-        systemd.enable = false; # auto start hyprland
+        systemd.enable = true; # systemd for hypridle
         settings = {
           "$mainMod" = "SUPER";
           "$ipc" = "noctalia-shell ipc call";

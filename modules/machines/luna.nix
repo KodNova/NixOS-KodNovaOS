@@ -144,5 +144,46 @@ _: {
     system.stateVersion = "25.11";
 
     # NOTE: below here is from hardware gen
+
+    # hyprland config for luna
+    my.home.noctalia-shell.settings = {
+      desktopWidgets = {
+        enabled = true;
+        gridSnap = false;
+        monitorWidgets = [
+          {
+            name = "eDP-1";
+            widgets = [
+              {
+                hideMode = "hidden";
+                id = "MediaPlayer";
+                roundedCorners = true;
+                scale = 1.0848528137423856;
+                showAlbumArt = true;
+                showBackground = true;
+                showButtons = true;
+                showVisualizer = true;
+                visualizerType = "linear";
+                x = 0;
+                y = 40;
+              }
+              {
+                clockColor = "secondary";
+                clockStyle = "minimal";
+                customFont = "Hack Nerd Font";
+                format = "HH:mm\\nd MMMM yyyy";
+                id = "Clock";
+                roundedCorners = true;
+                scale = 1.0232590180780452;
+                showBackground = true;
+                useCustomFont = true;
+                x = 1800;
+                y = 40;
+              }
+            ];
+          }
+        ];
+      };
+    };
   };
 }
