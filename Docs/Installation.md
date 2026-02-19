@@ -67,13 +67,13 @@ Navigate to the mount point and create the blank subvolumes:
 cd ~/btrfs-tmp
 
 # Create the temporary subvolume
-btrfs subvolume create /mnt/@blank-tmp
+btrfs subvolume create @blank-tmp
 
 # Create a read-only snapshot of the blank subvolume
-btrfs subvolume snapshot -r /mnt/@blank-tmp /mnt/@blank
+btrfs subvolume snapshot -r @blank-tmp @blank
 
 # Delete the temp subvolume
-btrfs subvolume delete /mnt/@blank-tmp
+btrfs subvolume delete @blank-tmp
 ```
 
 ### [sol] 5. System Installation
@@ -156,13 +156,13 @@ Navigate to the mount point and create the blank subvolumes:
 cd ~/btrfs-tmp
 
 # Create the temporary subvolume
-btrfs subvolume create /mnt/@blank-tmp
+btrfs subvolume create @blank-tmp
 
 # Create a read-only snapshot of the blank subvolume
-btrfs subvolume snapshot -r /mnt/@blank-tmp /mnt/@blank
+btrfs subvolume snapshot -r @blank-tmp @blank
 
 # Delete the temp subvolume
-btrfs subvolume delete /mnt/@blank-tmp
+btrfs subvolume delete @blank-tmp
 ```
 
 ### [luna] 5. System Installation
