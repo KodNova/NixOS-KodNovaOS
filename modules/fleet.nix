@@ -12,7 +12,8 @@
         self.nixosModules.workstation
         self.nixosModules.impermanence
         self.nixosModules.gaming
-        self.nixosModules.hyprland
+        # self.nixosModules.hyprland
+        self.nixosModules.mango
       ];
     };
 
