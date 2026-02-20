@@ -1,6 +1,5 @@
 _: {
   flake.nixosModules.solModule = {
-    pkgs,
     lib,
     config,
     modulesPath,
@@ -9,18 +8,6 @@ _: {
     imports = [
       (modulesPath + "/installer/scan/not-detected.nix")
     ];
-
-    my = {
-      username = "kodnova";
-      email = "Dev@KodNova.dev";
-      home = {
-        wayland.windowManager.hyprland.settings.monitor = [
-          "HDMI-A-1,1920x1080@60.00,0x0,1"
-          "DP-2,2560x1440@143.856003,1920x0,1"
-          "DVI-D-1,1920x1080@60.00,4480x0,1"
-        ];
-      };
-    };
 
     networking = {
       hostName = "sol";
@@ -46,110 +33,8 @@ _: {
       interval = "weekly"; # This is the default; can also be "daily"
     };
 
-    # --- USER CONFIG ---
-    users.mutableUsers = false;
-    users.users.${config.my.username} = {
-      isNormalUser = true;
-      description = config.my.username;
-      # WARN: placeholder password
-      hashedPassword = "$y$j9T$aK/y4/XGb2iKqAEyjyXI70$yLczsgiS6cWz/U6JMlPHa2OVyYTnY52hmOGBx8s42cB";
-      extraGroups = ["networkmanager" "wheel" "scanner" "lp" "libvirtd" "video" "render"];
-      shell = pkgs.zsh;
-    };
-
-    # --- IMPERMANENCE --- NOTE:keeps
-    environment.persistence."/persist" = {
-      hideMounts = false;
-      directories = [
-        "/etc/nixos"
-        "/var/log"
-        "/var/lib/bluetooth"
-        "/var/lib/nixos"
-        "/var/lib/systemd"
-        "/etc/NetworkManager/system-connections"
-        "/var/lib/NetworkManager"
-        "/etc/secureboot"
-        "/var/db/sudo"
-        "/srv"
-        "/var/lib/tailscale"
-        "/var/lib/flatpak"
-        "/etc/ssh"
-      ];
-      files = [
-        "/etc/machine-id"
-      ];
-
-      users.${config.my.username} = {
-        directories = [
-          "Downloads"
-          "Music"
-          "Pictures"
-          "Documents"
-          "Videos"
-          ".steam"
-          ".zen"
-          ".ts3client"
-          ".mozilla"
-          "zpm-mnt"
-          "scripts"
-
-          #.var
-          ".var/app"
-
-          #.local
-          ".local/share/Steam"
-          ".local/share/flatpak"
-          ".local/state/nix"
-
-          #.config
-          ".config/heroic"
-          ".config/discord"
-          ".config/lazygit"
-          ".config/zed"
-          ".config/zellij"
-          ".config/plexamp"
-          ".config/vlc"
-          ".config/Signal"
-          ".config/TeamSpeak"
-          ".config/syncthing"
-
-          #.cache
-          ".config/noctalia"
-          ".cache/tealdeer"
-          ".cache/fastfetch"
-          ".cache/starship"
-          ".cache/TeamSpeak"
-          ".cache/zen"
-          ".cache/zellij"
-          ".cache/zed"
-          ".cache/flatpak"
-          ".cache/nix"
-          ".cache/dolphin"
-          ".cache/appimage-run"
-          ".cache/pnpm"
-
-          {
-            directory = ".gnupg";
-            mode = "0700";
-          }
-          {
-            directory = ".ssh";
-            mode = "0700";
-          }
-          {
-            directory = ".local/share/keyrings";
-            mode = "0700";
-          }
-        ];
-        files = [
-          ".zsh_history"
-        ];
-      };
-    };
-
     system.stateVersion = "25.11";
 
-    # NOTE: below here is from hardware gen
     boot = {
       initrd = {
         availableKernelModules = ["xhci_pci" "ahci" "nvme" "uas" "usb_storage" "usbhid" "sd_mod" "sr_mod"];
@@ -203,54 +88,5 @@ _: {
 
     nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
     hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-
-    # hyprland config for sol
-    my.home.noctalia-shell.settings = {
-      desktopWidgets = {
-        enabled = true;
-        gridSnap = false;
-        monitorWidgets = [
-          {
-            name = "HDMI-A-1";
-            widgets = [];
-          }
-          {
-            name = "DVI-D-1";
-            widgets = [];
-          }
-          {
-            name = "DP-2";
-            widgets = [
-              {
-                hideMode = "hidden";
-                id = "MediaPlayer";
-                roundedCorners = true;
-                scale = 1.0848528137423856;
-                showAlbumArt = true;
-                showBackground = true;
-                showButtons = true;
-                showVisualizer = true;
-                visualizerType = "linear";
-                x = 0;
-                y = 40;
-              }
-              {
-                clockColor = "secondary";
-                clockStyle = "minimal";
-                customFont = "Hack Nerd Font";
-                format = "HH:mm\\nd MMMM yyyy";
-                id = "Clock";
-                roundedCorners = true;
-                scale = 1.5232590180780452;
-                showBackground = true;
-                useCustomFont = true;
-                x = 2280;
-                y = 40;
-              }
-            ];
-          }
-        ];
-      };
-    };
   };
 }

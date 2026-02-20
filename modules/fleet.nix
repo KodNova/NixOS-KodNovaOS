@@ -12,7 +12,7 @@
         self.nixosModules.workstation
         self.nixosModules.impermanence
         self.nixosModules.gaming
-        self.nixosModules.hyprland-desktop
+        self.nixosModules.hyprland
       ];
     };
 
@@ -23,7 +23,7 @@
         self.nixosModules.home-manager
         self.nixosModules.workstation
         self.nixosModules.impermanence
-        self.nixosModules.hyprland-laptop
+        self.nixosModules.hyprland
       ];
     };
 
