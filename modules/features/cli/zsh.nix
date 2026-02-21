@@ -45,7 +45,17 @@ _: {
       my.home = {
         programs.zsh.shellAliases = {
           zpm = "ssh 100.72.122.3";
-          puddlejumper = "ssh 100.78.244.126";
+          luna = "ssh 100.78.244.126";
+        };
+      };
+    };
+
+    lunaModule = _: {
+      my.home = {
+        programs.zsh.shellAliases = {
+          zpm = "ssh 100.72.122.3";
+          batt-full = "echo 100 | sudo tee /sys/class/power_supply/BAT0/charge_control_end_threshold";
+          batt-limit = "echo 80 | sudo tee /sys/class/power_supply/BAT0/charge_control_end_threshold";
         };
       };
     };

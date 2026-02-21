@@ -8,6 +8,7 @@
     impermanence.url = "github:nix-community/impermanence";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     zwift.url = "github:netbrain/zwift";
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";

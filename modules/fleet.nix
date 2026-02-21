@@ -12,8 +12,8 @@
         self.nixosModules.workstation
         self.nixosModules.impermanence
         self.nixosModules.gaming
-        # self.nixosModules.hyprland
-        self.nixosModules.mango
+        self.nixosModules.hyprland
+        # self.nixosModules.mango
       ];
     };
 
@@ -24,6 +24,7 @@
         self.nixosModules.home-manager
         self.nixosModules.workstation
         self.nixosModules.impermanence
+        inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t14-amd-gen1
         self.nixosModules.hyprland
       ];
     };
