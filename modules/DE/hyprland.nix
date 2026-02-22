@@ -10,7 +10,7 @@
       # noctalia needs these
       networking.networkmanager.enable = true;
       hardware.bluetooth.enable = true;
-      services.power-profiles-daemon.enable = true;
+      services.power-profiles-daemon.enable = false;
       services.upower.enable = true;
 
       environment.systemPackages = [

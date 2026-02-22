@@ -114,7 +114,6 @@ _: {
 
         users.${config.my.username} = {
           directories = [
-            "Downloads"
             "Music"
             "Pictures"
             "Documents"

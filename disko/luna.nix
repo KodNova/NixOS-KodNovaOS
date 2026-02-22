@@ -3,7 +3,7 @@
     disk = {
       znvme = {
         type = "disk";
-        device = "/dev/disk/by-id/"; #TODO: add disk id
+        device = "/dev/disk/by-id/nvme-eui.ace42e00150248f62ee4ac0000000001";
         content = {
           type = "gpt";
           partitions = {
