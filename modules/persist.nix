@@ -32,7 +32,6 @@ _: {
             ".steam"
             ".zen"
             ".ts3client"
-            ".mozilla"
             "zpm-mnt"
             "scripts"
 
@@ -55,6 +54,7 @@ _: {
             ".config/Signal"
             ".config/TeamSpeak"
             ".config/syncthing"
+            ".config/.mozilla"
 
             #.cache
             ".config/noctalia"
@@ -120,7 +120,6 @@ _: {
             "Videos"
             ".zen"
             ".ts3client"
-            ".mozilla"
             "zpm-mnt"
             "scripts"
 
@@ -141,6 +140,7 @@ _: {
             ".config/Signal"
             ".config/TeamSpeak"
             ".config/syncthing"
+            ".config/.mozilla"
 
             #.cache
             ".config/noctalia"
