@@ -12,19 +12,20 @@
         self.nixosModules.workstation
         self.nixosModules.impermanence
         self.nixosModules.gaming
+        self.nixosModules.noctalia
         self.nixosModules.hyprland
-        # self.nixosModules.mango
       ];
     };
 
     luna = inputs.nixpkgs.lib.nixosSystem {
       modules = [
+        inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t14-amd-gen1
         self.nixosModules.lunaModule
         self.nixosModules.base
         self.nixosModules.home-manager
         self.nixosModules.workstation
         self.nixosModules.impermanence
-        inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t14-amd-gen1
+        self.nixosModules.noctalia
         self.nixosModules.hyprland
       ];
     };
