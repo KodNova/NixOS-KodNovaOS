@@ -34,6 +34,7 @@ _: {
             ".ts3client"
             "zpm-mnt"
             "scripts"
+            "AppImages"
 
             #.var
             ".var/app"
@@ -54,7 +55,7 @@ _: {
             ".config/Signal"
             ".config/TeamSpeak"
             ".config/syncthing"
-            ".config/.mozilla"
+            ".config/mozilla"
 
             #.cache
             ".config/noctalia"
@@ -122,6 +123,7 @@ _: {
             ".ts3client"
             "zpm-mnt"
             "scripts"
+            "AppImages"
 
             #.var
             ".var/app"
@@ -140,7 +142,7 @@ _: {
             ".config/Signal"
             ".config/TeamSpeak"
             ".config/syncthing"
-            ".config/.mozilla"
+            ".config/mozilla"
 
             #.cache
             ".config/noctalia"
