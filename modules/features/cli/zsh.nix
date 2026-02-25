@@ -13,9 +13,6 @@ _: {
             syntaxHighlighting.enable = true;
 
             shellAliases = {
-              # ls = "eza --icons --group-directories-first";
-              # ll = "eza -l --icons --git --group-directories-first";
-              # la = "eza -la --icons --git --group-directories-first";
               cat = "bat";
               du = "dust";
               ps = "procs";
@@ -23,8 +20,13 @@ _: {
               find = "fd";
 
               sudo = "sudo ";
-              fastfetch = "fastfetch -l NixOS_old";
+              ff = "fastfetch -l NixOS_old";
               vim = "nix run github:KodNova/NeovimConfig-nfv";
+
+              nc = "/repos/NixOS-KodNovaOS";
+              fleet = "vim /repos/NixOS-KodNovaOS/modules/fleet.nix";
+              keep = "vim /repos/NixOS-KodNovaOS/modules/persist.nix";
+              firewall = "vim /repos/NixOS-KodNovaOS/modules/features/security.nix";
             };
 
             oh-my-zsh = {
@@ -44,7 +46,6 @@ _: {
     solModule = _: {
       my.home = {
         programs.zsh.shellAliases = {
-          zpm = "ssh 100.72.122.3";
           luna = "ssh 100.78.244.126";
         };
       };
@@ -53,7 +54,6 @@ _: {
     lunaModule = _: {
       my.home = {
         programs.zsh.shellAliases = {
-          zpm = "ssh 100.72.122.3";
           batt-full = "echo 100 | sudo tee /sys/class/power_supply/BAT0/charge_control_end_threshold";
           batt-limit = "echo 80 | sudo tee /sys/class/power_supply/BAT0/charge_control_end_threshold";
         };
@@ -67,10 +67,10 @@ _: {
           repo = "/repos";
           H = "start-hyprland";
 
+          zpm = "ssh 100.72.122.3";
           xavier = "ssh bobj@100.95.133.66";
 
-          olddev = "nix develop --command zsh";
-          dev = "devbox shell";
+          dev = "nix develop --command zsh";
         };
       };
     };

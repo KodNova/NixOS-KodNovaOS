@@ -32,7 +32,6 @@ _: {
             ".steam"
             ".zen"
             ".ts3client"
-            "zpm-mnt"
             "scripts"
             "AppImages"
 
@@ -121,7 +120,6 @@ _: {
             "Videos"
             ".zen"
             ".ts3client"
-            "zpm-mnt"
             "scripts"
             "AppImages"
 
