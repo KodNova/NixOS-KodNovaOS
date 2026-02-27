@@ -1,6 +1,11 @@
 _: {
-  flake.nixosModules.lunaModule = {lib,config,modulesPath,...}: {
-      imports = [
+  flake.nixosModules.lunaModule = {
+    lib,
+    config,
+    modulesPath,
+    ...
+  }: {
+    imports = [
       (modulesPath + "/installer/scan/not-detected.nix")
     ];
     networking = {
@@ -52,47 +57,52 @@ _: {
 
     system.stateVersion = "25.11";
 
-    boot.initrd.availableKernelModules = [ "nvme" "ehci_pci" "xhci_pci_renesas" "xhci_pci" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
-  boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-amd" ];
-  boot.extraModulePackages = [ ];
+    boot.initrd.availableKernelModules = ["nvme" "ehci_pci" "xhci_pci_renesas" "xhci_pci" "usb_storage" "sd_mod" "rtsx_pci_sdmmc"];
+    boot.initrd.kernelModules = [];
+    boot.kernelModules = ["kvm-amd"];
+    boot.extraModulePackages = [];
 
-  fileSystems."/" =
-    { device = "/dev/mapper/crypt1";
+    fileSystems."/" = {
+      device = "/dev/mapper/crypt1";
       fsType = "btrfs";
-      options = [ "subvol=@" ];
+      options = ["subvol=@"];
     };
 
-  boot.initrd.luks.devices."crypt1".device = "/dev/disk/by-uuid/6500c6a4-bae3-4840-a1b5-5f44bd28cba7";
+    boot.initrd.luks.devices."crypt1".device = "/dev/disk/by-uuid/6500c6a4-bae3-4840-a1b5-5f44bd28cba7";
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/C21C-20E4";
+    fileSystems."/boot" = {
+      device = "/dev/disk/by-uuid/C21C-20E4";
       fsType = "vfat";
-      options = [ "fmask=0077" "dmask=0077" ];
+      options = ["fmask=0077" "dmask=0077"];
     };
 
-  fileSystems."/nix" =
-    { device = "/dev/mapper/crypt1";
+    fileSystems."/nix" = {
+      device = "/dev/mapper/crypt1";
       fsType = "btrfs";
-      options = [ "subvol=@nix" ];
+      options = ["subvol=@nix"];
     };
 
-  fileSystems."/persist" =
-    { device = "/dev/mapper/crypt1";
+    fileSystems."/persist" = {
+      device = "/dev/mapper/crypt1";
       fsType = "btrfs";
-      options = [ "subvol=@persist" ];
+      options = ["subvol=@persist"];
       neededForBoot = true;
     };
 
-  fileSystems."/repos" =
-    { device = "/dev/mapper/crypt1";
+    fileSystems."/repos" = {
+      device = "/dev/mapper/crypt1";
       fsType = "btrfs";
-      options = [ "subvol=@repos" ];
+      options = ["subvol=@repos"];
     };
 
-  swapDevices = [ ];
+    swapDevices = [];
 
-  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+    zramSwap = {
+      enable = true;
+      memoryPercent = 50;
+    };
+
+    nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+    hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   };
 }
