@@ -21,7 +21,15 @@ _: {
         pkgs.wl-clipboard
       ];
 
+      environment.sessionVariables = {
+        NIXOS_OZONE_WL = "1";
+        XDG_CURRENT_DESKTOP = "Hyprland";
+        XDG_SESSION_TYPE = "wayland";
+        XDG_SESSION_DESKTOP = "Hyprland";
+      };
+
       my.home = _: {
+        home.packages = [pkgs.xdg-desktop-portal-gtk]; # had to add this for flatpak plex to open browser.
         services.hypridle = {
           enable = true;
           settings = {
