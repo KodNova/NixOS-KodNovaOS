@@ -54,6 +54,12 @@ _: {
 
         superfile = {
           enable = true;
+          settings = {
+            # theme = "catppuccin-mocha";
+            show_image_preview = false;
+            nerdfont = true;
+            ignore_missing_fields = false;
+          };
         };
 
         btop.enable = true;
