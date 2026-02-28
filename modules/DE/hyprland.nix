@@ -255,6 +255,10 @@ _: {
             ", preferred, auto, 1"
           ];
 
+          bind = [
+            "CTRL SHIFT ALT, Z, exec, alacritty -e zsh -i -c solway"
+          ];
+
           bindl = [
             ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
           ];

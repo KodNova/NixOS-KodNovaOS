@@ -55,6 +55,8 @@ _: {
       my.home = {
         programs.zsh.shellAliases = {
           sol = "ssh 100.116.22.124";
+          solway = "waypipe ssh -t -p 2222 100.116.22.124 zellij -l welcome";
+
           batt-full = "echo 100 | sudo tee /sys/class/power_supply/BAT0/charge_control_end_threshold";
           batt-limit = "echo 80 | sudo tee /sys/class/power_supply/BAT0/charge_control_end_threshold";
         };
