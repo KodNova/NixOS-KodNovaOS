@@ -46,7 +46,7 @@ _: {
     solModule = _: {
       my.home = {
         programs.zsh.shellAliases = {
-          luna = "ssh 100.78.244.126";
+          luna = "ssh 100.89.237.14";
         };
       };
     };
@@ -54,6 +54,7 @@ _: {
     lunaModule = _: {
       my.home = {
         programs.zsh.shellAliases = {
+          sol = "ssh 100.116.22.124";
           batt-full = "echo 100 | sudo tee /sys/class/power_supply/BAT0/charge_control_end_threshold";
           batt-limit = "echo 80 | sudo tee /sys/class/power_supply/BAT0/charge_control_end_threshold";
         };

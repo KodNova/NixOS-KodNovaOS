@@ -126,6 +126,7 @@ _: {
             bind = [
               # window management
               "$mainMod, C, killactive,"
+              "$mainMod, Q, killactive,"
               "$mainMod, P, pseudo,"
               "$mainMod, O, togglesplit,"
               "$mainMod, V, togglefloating,"
