@@ -16,7 +16,7 @@ _: {
         description = config.my.username;
         # WARN: placeholder password
         hashedPassword = "$y$j9T$aK/y4/XGb2iKqAEyjyXI70$yLczsgiS6cWz/U6JMlPHa2OVyYTnY52hmOGBx8s42cB";
-        extraGroups = ["networkmanager" "wheel" "scanner" "lp" "libvirtd" "video" "render"];
+        extraGroups = ["networkmanager" "wheel" "scanner" "lp" "libvirtd" "video" "render" "input"];
         shell = pkgs.zsh;
       };
     };

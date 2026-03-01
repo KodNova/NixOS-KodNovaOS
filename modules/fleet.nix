@@ -13,7 +13,8 @@
         self.nixosModules.impermanence
         self.nixosModules.gaming
         self.nixosModules.noctalia
-        self.nixosModules.hyprland
+        # self.nixosModules.hyprland
+        self.nixosModules.niri
       ];
     };
 
