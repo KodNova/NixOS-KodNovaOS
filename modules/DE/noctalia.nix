@@ -94,6 +94,16 @@
                     id = "Tray";
                     pinned = [];
                   }
+
+                  {
+                    deviceNativePath = "__default__";
+                    displayMode = "graphic";
+                    hideIfIdle = false;
+                    hideIfNotDetected = false;
+                    id = "Battery";
+                    showNoctaliaPerformance = false;
+                    showPowerProfiles = false;
+                  }
                   {
                     displayMode = "alwaysShow";
                     iconColor = "primary";
@@ -607,7 +617,7 @@
                     showButtons = true;
                     showVisualizer = true;
                     visualizerType = "linear";
-                    x = 0;
+                    x = 20;
                     y = 40;
                   }
                   {
@@ -620,8 +630,8 @@
                     scale = 1.0232590180780452;
                     showBackground = true;
                     useCustomFont = true;
-                    x = 1800;
-                    y = 40;
+                    x = 1720;
+                    y = 60;
                   }
                 ];
               }
