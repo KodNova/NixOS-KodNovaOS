@@ -128,12 +128,13 @@
               # Resize
               "Mod+Alt+H".action.set-column-width = "-40";
               "Mod+Alt+L".action.set-column-width = "+40";
-              "Mod+Alt+K".action.set-window-height = "-40";
-              "Mod+Alt+J".action.set-window-height = "+40";
+              "Mod+Alt+K".action.set-window-height = "+40";
+              "Mod+Alt+J".action.set-window-height = "-40";
               "Mod+R".action.switch-preset-column-width = {};
               "Mod+Alt+R".action.switch-preset-window-height = {};
-              "Mod+Alt+F".action.fullscreen-window = {};
+              "Mod+Alt+Ctrl+F".action.fullscreen-window = {};
               "Mod+F".action.maximize-column = {};
+              "Mod+Alt+F".action.expand-column-to-available-width = {};
 
               # App launches
               "Ctrl+Shift+F".action.spawn = ["alacritty" "-e" "superfile"];
