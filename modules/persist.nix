@@ -35,6 +35,16 @@ _: {
             "scripts"
             "AppImages"
 
+            #opencode
+            ".config/opencode"
+            ".cache/opencode"
+            ".local/share/opencode"
+            ".local/share/opentui"
+            ".local/state/opencode"
+
+            #lazygit
+            "./local/state/lazygit"
+
             #.var
             ".var/app"
 
@@ -122,6 +132,16 @@ _: {
             ".ts3client"
             "scripts"
             "AppImages"
+
+            #opencode
+            ".config/opencode"
+            ".cache/opencode"
+            ".local/share/opencode"
+            ".local/share/opentui"
+            ".local/state/opencode"
+
+            #lazygit
+            "./local/state/lazygit"
 
             #.var
             ".var/app"

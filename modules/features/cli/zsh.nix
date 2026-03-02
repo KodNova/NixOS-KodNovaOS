@@ -12,6 +12,13 @@ _: {
             enableCompletion = true;
             syntaxHighlighting.enable = true;
 
+            history = {
+              size = 10000;
+              save = 10000;
+              share = true;
+              ignoreDups = true;
+            };
+
             shellAliases = {
               cat = "bat";
               du = "dust";
