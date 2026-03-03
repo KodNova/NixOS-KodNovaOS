@@ -9,10 +9,6 @@
         pkgs.playerctl
         pkgs.wofi
         pkgs.rose-pine-cursor
-
-        # Screenshots & Clipboard
-        pkgs.grim
-        pkgs.slurp
         pkgs.wl-clipboard
       ];
 
@@ -63,6 +59,7 @@
         programs.niri = {
           settings = {
             hotkey-overlay.skip-at-startup = true;
+            screenshot-path = "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png";
 
             spawn-at-startup = [
               {
@@ -87,10 +84,26 @@
             input = {
               focus-follows-mouse.enable = false;
               keyboard.numlock = true;
+              warp-mouse-to-focus.enable = true;
+
+              mouse = {
+                # off
+                natural-scroll = false;
+                # accel-speed 0.2
+                accel-profile = "flat";
+                # scroll-factor 1.0
+                # scroll-factor vertical=1.0 horizontal=-2.0
+                # scroll-method "no-scroll"
+                # scroll-button 273
+                # scroll-button-lock
+                # left-handed
+                # middle-emulation
+              };
             };
+            gestures.hot-corners.enable = false;
 
             cursor = {
-              theme = "rose-pine-cursor";
+              theme = "rose-pine";
               size = 24;
               hide-on-key-press = true;
             };
@@ -102,7 +115,6 @@
               # Noctalia controls
               "Mod+Alt+Space".action.spawn = ["noctalia-shell" "ipc" "call" "launcher" "toggle"];
               "Mod+S".action.spawn = ["noctalia-shell" "ipc" "call" "controlCenter" "toggle"];
-              "Mod+Comma".action.spawn = ["noctalia-shell" "ipc" "call" "settings" "toggle"];
               "Mod+Escape".action.spawn = ["noctalia-shell" "ipc" "call" "sessionMenu" "toggle"];
 
               # Lock
@@ -118,12 +130,19 @@
               # Window management
               "Mod+Q".action.close-window = {};
               "Mod+V".action.toggle-window-floating = {};
+              "Mod+T".action.toggle-column-tabbed-display = {};
+              "Mod+O" = {
+                action.toggle-overview = {};
+                repeat = false;
+              };
 
-              # Move window (niri uses column/row movement)
+              # Move window
               "Mod+Shift+H".action.move-column-left = {};
               "Mod+Shift+L".action.move-column-right = {};
               "Mod+Shift+K".action.move-window-up = {};
               "Mod+Shift+J".action.move-window-down = {};
+              "Mod+Comma".action.consume-or-expel-window-left = {};
+              "Mod+Period".action.consume-or-expel-window-right = {};
 
               # Resize
               "Mod+Alt+H".action.set-column-width = "-40";
@@ -191,12 +210,22 @@
                 allow-when-locked = true;
                 repeat = true;
               };
+              "XF86AudioMicMute" = {
+                action.spawn = ["wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"];
+                allow-when-locked = true;
+                repeat = false;
+              };
 
-              # Focus (niri uses column focus for left/right)
+              # Focus
               "Mod+H".action.focus-column-left = {};
               "Mod+L".action.focus-column-right = {};
               "Mod+K".action.focus-window-up = {};
               "Mod+J".action.focus-window-down = {};
+
+              "Mod+Ctrl+H".action.focus-monitor-left = {};
+              "Mod+Ctrl+L".action.focus-monitor-right = {};
+              # "Mod+Ctrl+K".action.focus-monitor-up = {};
+              # "Mod+Ctrl+J".action.focus-monitor-down = {};
 
               # Workspaces
               "Mod+1".action.focus-workspace = 1;
@@ -280,6 +309,57 @@
               y = 0;
             };
             scale = 1.0;
+          };
+        };
+      };
+    };
+    lunaModule = _: {
+      my.home = _: {
+        programs.niri.settings = {
+          binds = {
+            "Ctrl+Shift+Alt+Z".action.spawn = [
+              "alacritty"
+              "-e"
+              "zsh"
+              "-i"
+              "-c"
+              "solway"
+            ];
+          };
+          input = {
+            touchpad = {
+              # off
+              tap = true;
+              # dwt
+              # dwtp
+              # drag false
+              # drag-lock
+              natural-scroll = false;
+              accel-speed = 0.2;
+              accel-profile = "flat";
+              # scroll-factor 1.0
+              # scroll-factor vertical=1.0 horizontal=-2.0
+              scroll-method = "two-finger";
+              # scroll-button 273
+              # scroll-button-lock
+              # tap-button-map "left-middle-right"
+              # click-method "clickfinger"
+              # left-handed
+              # disabled-on-external-mouse
+              # middle-emulation
+            };
+
+            trackpoint = {
+              # off
+              natural-scroll = false;
+              # accel-speed 0.2
+              accel-profile = "flat";
+              # scroll-method "on-button-down"
+              # scroll-button 273
+              # scroll-button-lock
+              # left-handed
+              # middle-emu
+            };
           };
         };
       };
