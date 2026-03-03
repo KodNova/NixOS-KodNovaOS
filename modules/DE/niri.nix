@@ -124,7 +124,7 @@
               "Alt+Ctrl+V".action.spawn = [
                 "sh"
                 "-c"
-                "cliphist list | rofi --dmenu | cliphist decode | wl-copy"
+                "cliphist list | wofi --dmenu | cliphist decode | wl-copy"
               ];
 
               # Window management
@@ -256,6 +256,7 @@
               "Mod+Ctrl+Shift+Alt+R".action.spawn = "reboot";
               "Mod+Ctrl+Shift+Alt+C".action.quit = {};
             };
+            prefer-no-csd = true;
             layout = {
               preset-column-widths = [
                 {proportion = 1.0 / 3.0;}
@@ -266,6 +267,72 @@
                 {proportion = 0.5;}
                 {proportion = 1.0;}
               ];
+              gaps = 4;
+              center-focused-column = "on-overflow"; # [ never, always, on-overflow]
+              default-column-display = "normal";
+              border = {
+                enable = false;
+                width = 2;
+                active.color = "#cba6f7";
+                inactive.color = "#74c7ec";
+                urgent.color = "#f38ba8";
+              };
+              focus-ring = {
+                enable = true;
+                width = 2;
+                active.gradient = {
+                  from = "#b4befe";
+                  to = "#cba6f7";
+                };
+                inactive.color = "#74c7ec";
+                urgent.color = "#f38ba8";
+              };
+              tab-indicator = {
+                enable = true;
+                width = 8;
+                gap = 8;
+                length.total-proportion = 1.0;
+                position = "top";
+                place-within-column = true;
+                active.color = "#cba6f7";
+                inactive.color = "#74c7ec";
+                urgent.color = "#f38ba8";
+              };
+              insert-hint.display.gradient = {
+                from = "#b4befe";
+                to = "#cba6f7";
+              };
+              background-color = "#b7bdf8";
+            };
+            window-rules = [
+              {
+                draw-border-with-background = false;
+                geometry-corner-radius = {
+                  top-left = 10.0;
+                  top-right = 10.0;
+                  bottom-left = 10.0;
+                  bottom-right = 10.0;
+                };
+                clip-to-geometry = true;
+              }
+            ];
+
+            animations = {
+              enable = true;
+              window-open = {
+                enable = true;
+                kind.easing = {
+                  duration-ms = 1000;
+                  curve = "ease-out-expo";
+                };
+              };
+              window-close = {
+                enable = true;
+                kind.easing = {
+                  duration-ms = 1000;
+                  curve = "ease-out-quad";
+                };
+              };
             };
           };
         };
