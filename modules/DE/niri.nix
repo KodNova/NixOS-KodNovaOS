@@ -284,20 +284,23 @@
               center-focused-column = "on-overflow"; # [ never, always, on-overflow]
               default-column-display = "normal";
               border = {
-                enable = false;
+                enable = true;
                 width = 2;
-                active.color = "#cba6f7";
-                inactive.color = "#74c7ec";
+                active.gradient = {
+                  from = "#f9e2af";
+                  to = "#b4befe";
+                };
+                inactive.color = "#bac2de";
                 urgent.color = "#f38ba8";
               };
               focus-ring = {
-                enable = true;
+                enable = false;
                 width = 2;
                 active.gradient = {
                   from = "#b4befe";
                   to = "#cba6f7";
                 };
-                inactive.color = "#74c7ec";
+                inactive.color = "#bac2de";
                 urgent.color = "#f38ba8";
               };
               tab-indicator = {
@@ -315,7 +318,7 @@
                 from = "#b4befe";
                 to = "#cba6f7";
               };
-              background-color = "#b7bdf8";
+              background-color = "#1e1e2e";
             };
             window-rules = [
               {
