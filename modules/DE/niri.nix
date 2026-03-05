@@ -10,6 +10,7 @@
         pkgs.wofi
         pkgs.rose-pine-cursor
         pkgs.wl-clipboard
+        pkgs.swayidle
       ];
 
       environment.sessionVariables = {
@@ -45,8 +46,10 @@
 
       my.home = _: {
         home.packages = [pkgs.xdg-desktop-portal-gtk pkgs.cliphist];
-        services.cliphist.enable = true;
-        services.cliphist.allowImages = true;
+        services = {
+          cliphist.enable = true;
+          cliphist.allowImages = true;
+        };
 
         home.pointerCursor = {
           package = pkgs.rose-pine-cursor;
@@ -70,15 +73,20 @@
                   "XDG_CURRENT_DESKTOP"
                 ];
               }
+              {command = ["noctalia-shell"];}
+              {command = ["systemctl" "--user" "restart" "cliphist.service"];}
+              {command = ["systemctl" "--user" "restart" "cliphist-images.service"];}
               {
                 command = [
-                  "systemctl"
-                  "--user"
-                  "start"
-                  "graphical-session.target"
+                  "swayidle"
+                  "-w"
+                  "timeout"
+                  "600"
+                  "niri msg action power-off-monitors"
+                  "before-sleep"
+                  "niri msg action power-off-monitors"
                 ];
               }
-              {command = ["noctalia-shell"];}
             ];
 
             input = {
@@ -127,6 +135,10 @@
                 "cliphist list | wofi --dmenu | cliphist decode | wl-copy"
               ];
 
+              #mouse
+              "Mod+WheelScrollDown".action.focus-column-right = {};
+              "Mod+WheelScrollUp".action.focus-column-left = {};
+
               # Window management
               "Mod+Q".action.close-window = {};
               "Mod+V".action.toggle-window-floating = {};
@@ -159,6 +171,7 @@
               "Ctrl+Shift+F".action.spawn = ["alacritty" "-e" "superfile"];
               "Ctrl+Shift+S".action.spawn = "steam";
               "Ctrl+Shift+Z".action.spawn = ["alacritty" "-e" "zellij" "-l" "welcome"];
+              "Ctrl+Shift+B".action.spawn = "app.zen_browser.zen";
               "Ctrl+Shift+Q".action.spawn = "signal-desktop";
               "Ctrl+Shift+M".action.spawn = "thunderbird";
               "Ctrl+Shift+P".action.spawn = ["bash" "-c" "pkill pavucontrol || pavucontrol"];

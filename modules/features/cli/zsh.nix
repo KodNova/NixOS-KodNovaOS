@@ -76,7 +76,7 @@ _: {
           odin = "/repos/odin/";
           repo = "/repos";
           H = "start-hyprland";
-          N = "niri session";
+          N = "niri";
 
           zpm = "ssh 100.72.122.3";
           xavier = "ssh bobj@100.95.133.66";
