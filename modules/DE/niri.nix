@@ -18,7 +18,7 @@
         XDG_CURRENT_DESKTOP = "niri";
         XDG_SESSION_TYPE = "wayland";
         XDG_SESSION_DESKTOP = "niri";
-        XCURSOR_THEME = "rose-pine";
+        XCURSOR_THEME = "BreezeX-RosePine-Linux";
         XCURSOR_SIZE = "24";
       };
 
@@ -53,7 +53,7 @@
 
         home.pointerCursor = {
           package = pkgs.rose-pine-cursor;
-          name = "rose-pine";
+          name = "BreezeX-RosePine-Linux";
           size = 24;
           gtk.enable = true;
           x11.enable = true;
@@ -111,7 +111,7 @@
             gestures.hot-corners.enable = false;
 
             cursor = {
-              theme = "rose-pine";
+              theme = "BreezeX-RosePine-Linux";
               size = 24;
               hide-on-key-press = true;
             };
