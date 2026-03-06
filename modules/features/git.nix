@@ -11,6 +11,7 @@ _: {
         settings = {
           user.name = config.my.username;
           user.email = config.my.email;
+          init.defaultBranch = "main";
         };
       };
     };
