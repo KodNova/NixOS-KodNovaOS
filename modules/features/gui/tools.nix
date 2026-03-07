@@ -8,6 +8,14 @@ _: {
       pkgs.papirus-icon-theme
       pkgs.bleachbit
       pkgs.piper
+
+      pkgs.nautilus
+
+      pkgs.kdePackages.dolphin
+      pkgs.kdePackages.kio-extras
+      pkgs.kdePackages.gwenview
+      pkgs.kdePackages.ark
+      pkgs.kdePackages.kate
     ];
 
     services = {

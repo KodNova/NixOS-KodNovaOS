@@ -71,6 +71,7 @@
                   "--systemd"
                   "WAYLAND_DISPLAY"
                   "XDG_CURRENT_DESKTOP"
+                  "XDG_DATA_DIRS"
                 ];
               }
               {command = ["noctalia-shell"];}
@@ -271,6 +272,7 @@
             };
             prefer-no-csd = true;
             layout = {
+              default-column-width = {proportion = 0.5;};
               preset-column-widths = [
                 {proportion = 1.0 / 3.0;}
                 {proportion = 0.5;}
