@@ -4,7 +4,7 @@ _: {
     pkgs,
     ...
   }: {
-    environment.systemPackages = [pkgs.git pkgs.lazygit pkgs.jujutsu];
+    environment.systemPackages = [pkgs.git pkgs.lazygit];
     my.home = {
       programs.git = {
         enable = true;
@@ -12,6 +12,13 @@ _: {
           user.name = config.my.username;
           user.email = config.my.email;
           init.defaultBranch = "main";
+        };
+      };
+      programs.jujutsu = {
+        enable = true;
+        settings = {
+          user.name = config.my.username;
+          user.email = config.my.email;
         };
       };
     };

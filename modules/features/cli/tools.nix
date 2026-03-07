@@ -56,9 +56,9 @@ _: {
           enable = true;
           settings = {
             # theme = "catppuccin-mocha";
-            show_image_preview = false;
+            show_image_preview = true;
             nerdfont = true;
-            ignore_missing_fields = false;
+            ignore_missing_fields = true;
           };
         };
 
