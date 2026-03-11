@@ -124,7 +124,7 @@ _: {
       };
     };
 
-    solModule = {config, ...}: {
+    gaming = {config, ...}: {
       environment.persistence."/persist" = {
         users.${config.my.username} = {
           directories = [
@@ -132,6 +132,15 @@ _: {
             ".steam"
             ".local/share/Steam"
             ".config/heroic"
+          ];
+        };
+      };
+    };
+
+    solModule = {config, ...}: {
+      environment.persistence."/persist" = {
+        users.${config.my.username} = {
+          directories = [
           ];
         };
       };
