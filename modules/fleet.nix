@@ -27,7 +27,8 @@
         self.nixosModules.workstation
         self.nixosModules.impermanence
         self.nixosModules.noctalia
-        self.nixosModules.hyprland
+        # self.nixosModules.hyprland
+        self.nixosModules.niri
       ];
     };
 
