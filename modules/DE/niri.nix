@@ -11,6 +11,7 @@
         pkgs.rose-pine-cursor
         pkgs.wl-clipboard
         pkgs.swayidle
+        pkgs.xwayland-satellite
       ];
 
       environment.sessionVariables = {
