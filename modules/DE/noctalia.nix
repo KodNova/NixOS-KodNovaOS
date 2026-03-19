@@ -43,7 +43,7 @@
               widgets = {
                 left = [
                   {
-                    displayMode = "onhover";
+                    displayMode = "alwaysShow";
                     iconColor = "none";
                     id = "Network";
                     textColor = "none";
@@ -52,12 +52,6 @@
                     displayMode = "onhover";
                     iconColor = "none";
                     id = "Bluetooth";
-                    textColor = "none";
-                  }
-                  {
-                    displayMode = "alwaysShow";
-                    iconColor = "error";
-                    id = "VPN";
                     textColor = "none";
                   }
                 ];
@@ -69,7 +63,7 @@
                     enableColorization = false;
                     icon = "noctalia";
                     id = "ControlCenter";
-                    useDistroLogo = true;
+                    useDistroLogo = false;
                   }
                   {
                     hideWhenZero = false;
@@ -621,17 +615,16 @@
                     y = 40;
                   }
                   {
-                    clockColor = "secondary";
+                    clockColor = "none";
                     clockStyle = "minimal";
                     customFont = "Hack Nerd Font";
                     format = "HH:mm\\nd MMMM yyyy";
                     id = "Clock";
                     roundedCorners = true;
-                    scale = 1.0232590180780452;
                     showBackground = true;
                     useCustomFont = true;
-                    x = 1720;
-                    y = 60;
+                    x = 1368;
+                    y = 48;
                   }
                 ];
               }
