@@ -28,7 +28,8 @@ _: {
 
               sudo = "sudo ";
               ff = "fastfetch -l NixOS_old";
-              vim = "nix run github:KodNova/NeovimConfig-nfv";
+              oldvim = "nix run github:KodNova/Neovim-nvf";
+              vim = "nix run github:KodNova/Neovim-Nixvim";
 
               nc = "/repos/NixOS-KodNovaOS";
               fleet = "vim /repos/NixOS-KodNovaOS/modules/fleet.nix";
