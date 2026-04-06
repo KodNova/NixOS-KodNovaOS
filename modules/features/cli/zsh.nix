@@ -34,6 +34,7 @@ _: {
               nc = "/repos/NixOS-KodNovaOS";
               fleet = "vim /repos/NixOS-KodNovaOS/modules/fleet.nix";
               keep = "vim /repos/NixOS-KodNovaOS/modules/persist.nix";
+              myzsh = "vim /repos/NixOS-KodNovaOS/modules/features/cli/zsh.nix";
               firewall = "vim /repos/NixOS-KodNovaOS/modules/features/security.nix";
             };
 
@@ -78,9 +79,17 @@ _: {
           repo = "/repos";
           H = "start-hyprland";
           N = "niri";
+          mpvhw = "mpv --hwdec=vaapi";
 
+          #ssh
           zpm = "ssh 100.72.122.3";
           xavier = "ssh bobj@100.95.133.66";
+
+          #vpn
+          vpnca = "sudo tailscale up --exit-node=ca-mtr-wg-001.mullvad.ts.net";
+          vpnsw = "sudo tailscale up --exit-node=se-got-wg-003.mullvad.ts.net";
+          vpnus = "sudo tailscale up --exit-node=us-chi-wg-301.mullvad.ts.net";
+          vpndown = "sudo tailscale up --exit-node=";
 
           dev = "nix develop --command zsh";
         };
