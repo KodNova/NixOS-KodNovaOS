@@ -101,8 +101,11 @@ _: {
             #dolphin
             ".cache/dolphin"
 
+            #dev
             #pnpm
             ".cache/pnpm"
+            #cargo
+            ".cargo"
 
             {
               directory = ".gnupg";
@@ -140,8 +143,7 @@ _: {
     solModule = {config, ...}: {
       environment.persistence."/persist" = {
         users.${config.my.username} = {
-          directories = [
-          ];
+          directories = [];
         };
       };
     };

@@ -92,6 +92,7 @@ _: {
           vpndown = "sudo tailscale up --exit-node=";
 
           dev = "nix develop --command zsh";
+          pn = "pnpm";
         };
       };
     };
