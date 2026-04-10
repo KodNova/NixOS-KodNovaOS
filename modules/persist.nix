@@ -135,6 +135,9 @@ _: {
             ".steam"
             ".local/share/Steam"
             ".config/heroic"
+
+            #X4
+            ".config/EgoSoft"
           ];
         };
       };
