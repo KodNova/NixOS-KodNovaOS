@@ -15,7 +15,7 @@
           defaultWallpaper = "/repos/NixOS-KodNovaOS/wallpaper.png";
         };
 
-        programs.noctalia-shell = {
+        programs.noctalia = {
           enable = true;
           settings = {
             settingsVersion = 53;
@@ -541,7 +541,7 @@
 
     solModule = _: {
       my.home = {
-        programs.noctalia-shell.settings = {
+        programs.noctalia.settings = {
           desktopWidgets = {
             enabled = true;
             gridSnap = false;
@@ -593,7 +593,7 @@
 
     lunaModule = _: {
       my.home = {
-        programs.noctalia-shell.settings = {
+        programs.noctalia.settings = {
           desktopWidgets = {
             enabled = true;
             gridSnap = false;

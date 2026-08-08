@@ -2,7 +2,21 @@
   flake.nixosModules = {
     niri = {pkgs, ...}: {
       imports = [inputs.niri.nixosModules.niri];
-      nixpkgs.overlays = [inputs.niri.overlays.niri];
+      nixpkgs.overlays = [
+        inputs.niri.overlays.niri
+        (final: prev: {
+          libdisplay-info_0_2 = prev.libdisplay-info.overrideAttrs (oldAttrs: rec {
+            version = "0.2.0";
+            src = prev.fetchFromGitLab {
+              domain = "gitlab.freedesktop.org";
+              owner = "emersion";
+              repo = "libdisplay-info";
+              rev = version;
+              hash = "sha256-6xmWBrPHghjok43eIDGeshpUEQTuwWLXNHg7CnBUt3Q=";
+            };
+          });
+        })
+      ];
       programs.niri.enable = true;
 
       environment.systemPackages = [
@@ -75,7 +89,7 @@
                   "XDG_DATA_DIRS"
                 ];
               }
-              {command = ["noctalia-shell"];}
+              {command = ["noctalia"];}
               {command = ["systemctl" "--user" "restart" "cliphist.service"];}
               {command = ["systemctl" "--user" "restart" "cliphist-images.service"];}
               {
@@ -123,12 +137,12 @@
               "Mod+Space".action.spawn = ["bash" "-c" "pkill rofi || rofi -show drun"];
 
               # Noctalia controls
-              "Mod+Alt+Space".action.spawn = ["noctalia-shell" "ipc" "call" "launcher" "toggle"];
-              "Mod+S".action.spawn = ["noctalia-shell" "ipc" "call" "controlCenter" "toggle"];
-              "Mod+Escape".action.spawn = ["noctalia-shell" "ipc" "call" "sessionMenu" "toggle"];
+              "Mod+Alt+Space".action.spawn = ["noctalia" "msg" "panel-toggle" "launcher"];
+              "Mod+S".action.spawn = ["noctalia" "msg" "panel-toggle" "controlCenter"];
+              "Mod+Escape".action.spawn = ["noctalia" "msg" "panel-toggle" "sessionMenu"];
 
               # Lock
-              "Ctrl+Alt+Delete".action.spawn = ["noctalia-shell" "ipc" "call" "lockScreen" "lock"];
+              "Ctrl+Alt+Delete".action.spawn = ["noctalia" "msg" "session" "lock"];
 
               # clipboard
               "Alt+Ctrl+V".action.spawn = [
@@ -202,26 +216,26 @@
 
               # Volume / Brightness (repeatable)
               "XF86AudioRaiseVolume" = {
-                action.spawn = ["noctalia-shell" "ipc" "call" "volume" "increase"];
+                action.spawn = ["noctalia" "msg" "volume-up"];
                 allow-when-locked = true;
                 repeat = true;
               };
               "XF86AudioLowerVolume" = {
-                action.spawn = ["noctalia-shell" "ipc" "call" "volume" "decrease"];
+                action.spawn = ["noctalia" "msg" "volume-down"];
                 allow-when-locked = true;
                 repeat = true;
               };
               "XF86AudioMute" = {
-                action.spawn = ["noctalia-shell" "ipc" "call" "volume" "muteOutput"];
+                action.spawn = ["noctalia" "msg" "volume-mute"];
                 allow-when-locked = true;
               };
               "XF86MonBrightnessUp" = {
-                action.spawn = ["noctalia-shell" "ipc" "call" "brightness" "increase"];
+                action.spawn = ["noctalia" "msg" "brightness-up"];
                 allow-when-locked = true;
                 repeat = true;
               };
               "XF86MonBrightnessDown" = {
-                action.spawn = ["noctalia-shell" "ipc" "call" "brightness" "decrease"];
+                action.spawn = ["noctalia" "msg" "brightness-down"];
                 allow-when-locked = true;
                 repeat = true;
               };
