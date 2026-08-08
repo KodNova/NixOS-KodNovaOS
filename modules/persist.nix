@@ -88,6 +88,7 @@ _: {
 
             #noctalia
             ".config/noctalia"
+            ".local/state/noctalia"
 
             #tealdeer(tldr)
             ".cache/tealdeer"
@@ -138,6 +139,9 @@ _: {
 
             #X4
             ".config/EgoSoft"
+
+            #eco & valhiem
+            ".config/unity3d"
           ];
         };
       };

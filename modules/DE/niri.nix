@@ -140,8 +140,8 @@
 
               # Noctalia controls
               "Mod+Alt+Space".action.spawn = ["noctalia" "msg" "panel-toggle" "launcher"];
-              "Mod+S".action.spawn = ["noctalia" "msg" "panel-toggle" "controlCenter"];
-              "Mod+Escape".action.spawn = ["noctalia" "msg" "panel-toggle" "sessionMenu"];
+              "Mod+S".action.spawn = ["noctalia" "msg" "panel-toggle" "control-center"];
+              "Mod+Escape".action.spawn = ["noctalia" "msg" "panel-toggle" "session"];
 
               # Lock
               "Ctrl+Alt+Delete".action.spawn = ["noctalia" "msg" "session" "lock"];
