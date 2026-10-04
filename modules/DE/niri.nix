@@ -4,7 +4,7 @@
       imports = [inputs.niri.nixosModules.niri];
       nixpkgs.overlays = [
         inputs.niri.overlays.niri
-        # NOTE: remove this once they fix nixpkgs issue
+        # NOTE: remove this once niri-flake fixes libdisplay-info_0_2 removal from nixpkgs
         (final: prev: {
           libdisplay-info_0_2 = prev.libdisplay-info.overrideAttrs (oldAttrs: rec {
             version = "0.2.0";
@@ -69,6 +69,7 @@
         };
 
         home.pointerCursor = {
+          enable = true;
           package = pkgs.rose-pine-cursor;
           name = "BreezeX-RosePine-Linux";
           size = 24;

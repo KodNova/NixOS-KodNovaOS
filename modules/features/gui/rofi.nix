@@ -6,7 +6,7 @@ _: {
       programs.rofi = {
         enable = true;
 
-        extraConfig = {
+        settings = {
           modi = "drun,run,window";
           show-icons = true;
           display-drun = " ";
