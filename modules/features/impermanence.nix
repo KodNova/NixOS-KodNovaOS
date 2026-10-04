@@ -1,12 +1,18 @@
 {inputs, ...}: {
-  flake.nixosModules.impermanence = {lib, ...}: {
+  flake.nixosModules.impermanence = _: {
     imports = [
       inputs.impermanence.nixosModules.impermanence
     ];
 
-    boot = {
-      # Wipe root on boot
-      initrd.postResumeCommands = lib.mkAfter ''
+    boot.initrd.systemd.services.rollback = {
+      description = "Rollback BTRFS root subvolume to a blank snapshot";
+      wantedBy = ["initrd.target"];
+      after = ["dev-mapper-crypt1.device"];
+      requires = ["dev-mapper-crypt1.device"];
+      before = ["sysroot.mount"];
+      unitConfig.DefaultDependencies = "no";
+      serviceConfig.Type = "oneshot";
+      script = ''
         mkdir -p /btrfs_tmp
         mount -o subvol=/ /dev/mapper/crypt1 /btrfs_tmp
 

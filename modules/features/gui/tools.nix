@@ -1,7 +1,7 @@
 _: {
   flake.nixosModules.workstation = {pkgs, ...}: {
     environment.systemPackages = [
-      pkgs.libreoffice-fresh
+      pkgs.libreoffice
       pkgs.gimp
       pkgs.localsend
       pkgs.remmina
