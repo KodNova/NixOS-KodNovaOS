@@ -53,7 +53,7 @@
 
     hdd2tb = {
       type = "disk";
-      device = "/dev/disk/by-id/ata-WDC_WD20EZRZ-00Z5HBO_WD-WCC4M6PN8U5K";
+      device = "/dev/disk/by-id/ata-WDC_WD20EZRZ-00Z5HB0_WD-WCC4M6PN8U5K";
       content = {
         type = "gpt";
         partitions.data = {
@@ -71,7 +71,7 @@
 
     hdd4tb = {
       type = "disk";
-      device = "/dev/disk/by-id/ata-WDC_WD40EFAX-68JH4NO_WD-WX61DC9K7AL7";
+      device = "/dev/disk/by-id/ata-WDC_WD40EFAX-68JH4N0_WD-WX61DC9K7AL7";
       content = {
         type = "gpt";
         partitions.data = {
